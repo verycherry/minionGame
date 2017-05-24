@@ -6,6 +6,7 @@
 #import the modules we need, for creating a GUI
 import tkinter
 import random
+import os
 
 #only press return once
 okToPressReturn = True
@@ -161,7 +162,9 @@ dayLabel = tkinter.Label(root, text="Day: " + str(day), font=('Helvetica', 12))
 dayLabel.pack()
 
 # the different minions
-minion1 = tkinter.PhotoImage(file="minion1.gif")
+os.chdir("..")
+path = str(os.path.abspath(os.curdir)) + '/pics/minion1.gif'
+minion1 = tkinter.PhotoImage(file=path)
 
 #add a minion image
 minionPic = tkinter.Label(root, image=minion1)
